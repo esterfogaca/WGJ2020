@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/Girl.gd" type="Script" id=1]
 [ext_resource path="res://assets/girl/Main-Char---Sprites_0001s_0001_Idle-1.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/girl/Main-Char---Sprites_0001s_0002_Idle-2.png" type="Texture" id=5]
 [ext_resource path="res://assets/girl/Main-Char---Sprites_0001s_0004_Idle-4.png" type="Texture" id=6]
 [ext_resource path="res://assets/temporario/sample_alt.png" type="Texture" id=7]
+[ext_resource path="res://assets/temporario/volcano_pack_39.png" type="Texture" id=8]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 19.9676
@@ -17,7 +18,23 @@ animations = [ {
 "loop": true,
 "name": "idle",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "walk_right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "walk_left",
+"speed": 5.0
 } ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 3.74249, 0.492545 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 231.049, 80.069 )
 
 [node name="World" type="Node2D"]
 scale = Vector2( 0.3, 0.3 )
@@ -31,7 +48,7 @@ texture = ExtResource( 7 )
 centered = false
 
 [node name="Girl" type="KinematicBody2D" parent="."]
-position = Vector2( 494.402, 1745.55 )
+position = Vector2( 494.402, 1732.95 )
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Girl"]
@@ -42,7 +59,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Girl"]
 position = Vector2( 22.6274, -144.25 )
 frames = SubResource( 2 )
-animation = "idle"
+animation = "walk_left"
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="Girl"]
@@ -53,3 +70,31 @@ limit_bottom = 0
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 editor_draw_drag_margin = true
+
+[node name="Ground" type="StaticBody2D" parent="."]
+scale = Vector2( 1.5, 1 )
+
+[node name="Sprite" type="Sprite" parent="Ground"]
+scale = Vector2( 0.611246, 0.949553 )
+
+[node name="volcano_pack_39" type="Sprite" parent="Ground/Sprite"]
+visible = false
+position = Vector2( 572.201, 1996.63 )
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2( 777.004, 1879.59 )
+scale = Vector2( 220, 167.363 )
+shape = SubResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="Ground"]
+scale = Vector2( 0.611246, 0.949553 )
+
+[node name="volcano_pack_39" type="Sprite" parent="Ground/Sprite2"]
+visible = false
+position = Vector2( 3600.14, 1980.87 )
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/Sprite2"]
+position = Vector2( 3737.32, 1997.82 )
+shape = SubResource( 4 )
