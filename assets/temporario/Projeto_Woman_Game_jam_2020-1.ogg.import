@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Projeto_Woman_Game_jam_2020-1.ogg-cb3815b768f6a4316b37139e067be3d3.oggstr"
+
+[deps]
+
+source_file="res://assets/temporario/Projeto_Woman_Game_jam_2020-1.ogg"
+dest_files=[ "res://.import/Projeto_Woman_Game_jam_2020-1.ogg-cb3815b768f6a4316b37139e067be3d3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

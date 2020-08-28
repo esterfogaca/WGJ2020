@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/girl/Main-Char---Sprites_0001s_0002_Idle-2.png" type="Texture" id=1]
 [ext_resource path="res://assets/girl/Main-Char---Sprites_0001s_0001_Idle-1.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/girl/Main-Char---Sprites_0001s_0003_Idle-3.png" type="Texture" id=4]
 [ext_resource path="res://assets/girl/Main-Char---Sprites_0001s_0004_Idle-4.png" type="Texture" id=5]
 [ext_resource path="res://assets/girl/Main-Char---Sprites_0001s_0005_Idle-5.png" type="Texture" id=6]
+[ext_resource path="res://assets/temporario/jump_sound.wav" type="AudioStream" id=7]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -50,3 +51,7 @@ editor_draw_drag_margin = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 42.6192, -120.93 )
 shape = SubResource( 2 )
+
+[node name="AudioJump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -15.0

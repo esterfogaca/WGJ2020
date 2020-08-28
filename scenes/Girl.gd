@@ -28,6 +28,7 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		if Input.is_action_just_pressed("up_jump"):
 			velocity.y = JUMP_HEIGHT
+			$AudioJump.play()
 		if friction == true:
 			velocity.x = lerp(velocity.x, 0, 0.2)
 	

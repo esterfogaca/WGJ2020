@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="WGJ2020"
-config/icon="res://icon.png"
+run/main_scene="res://scenes/World.tscn"
 
 [input]
 
@@ -46,4 +46,5 @@ up_jump={
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
 environment/default_environment="res://default_env.tres"
