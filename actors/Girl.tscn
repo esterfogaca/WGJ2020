@@ -6,7 +6,8 @@
 [ext_resource path="res://assets/girl/Main-Char---Sprites_0001s_0003_Idle-3.png" type="Texture" id=4]
 [ext_resource path="res://assets/girl/Main-Char---Sprites_0001s_0004_Idle-4.png" type="Texture" id=5]
 [ext_resource path="res://assets/girl/Main-Char---Sprites_0001s_0005_Idle-5.png" type="Texture" id=6]
-[ext_resource path="res://assets/temporario/jump_sound.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/tileset/jump_sound.wav" type="AudioStream" id=7]
+
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
