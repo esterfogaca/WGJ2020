@@ -17,12 +17,12 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "walk_left",
+"name": "jump",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
-"name": "walk_right",
+"name": "walk",
 "speed": 5.0
 } ]
 
@@ -36,7 +36,8 @@ script = ExtResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 22.6274, -144.25 )
 frames = SubResource( 1 )
-animation = "walk_left"
+animation = "idle"
+frame = 4
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
