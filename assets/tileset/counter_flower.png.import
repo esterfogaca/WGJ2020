@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/volcano_pack_38.png-0a64d98c7f524e2bab8416cec9743a69.stex"
+path="res://.import/counter_flower.png-4f235a9ea697156818c1f1d162641c4e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tileset/volcano_pack_38.png"
-dest_files=[ "res://.import/volcano_pack_38.png-0a64d98c7f524e2bab8416cec9743a69.stex" ]
+source_file="res://assets/tileset/counter_flower.png"
+dest_files=[ "res://.import/counter_flower.png-4f235a9ea697156818c1f1d162641c4e.stex" ]
 
 [params]
 

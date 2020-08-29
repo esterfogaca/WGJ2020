@@ -3,7 +3,10 @@
 [ext_resource path="res://actors/Girl.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tileset/Projeto_Woman_Game_jam_2020-1.ogg" type="AudioStream" id=2]
 [ext_resource path="res://assets/tileset/sample_alt.png" type="Texture" id=7]
-[ext_resource path="res://assets/tileset/volcano_pack_39.png" type="Texture" id=8]
+
+[sub_resource type="StreamTexture" id=5]
+flags = 4
+load_path = "res://.import/volcano_pack_39.png-842f66f32c7826cd253e59b3b3226d18.stex"
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3.9773, 0.492545 )
@@ -39,7 +42,7 @@ scale = Vector2( 0.611246, 0.949553 )
 [node name="volcano_pack_39" type="Sprite" parent="Stage/Sprite"]
 visible = false
 position = Vector2( 572.201, 1996.63 )
-texture = ExtResource( 8 )
+texture = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stage"]
 position = Vector2( 630.371, 1720.32 )
@@ -65,7 +68,7 @@ scale = Vector2( 0.611246, 0.949553 )
 [node name="volcano_pack_39" type="Sprite" parent="Stage/Sprite2"]
 visible = false
 position = Vector2( 3600.14, 1980.87 )
-texture = ExtResource( 8 )
+texture = SubResource( 5 )
 
 [node name="Girl" parent="." instance=ExtResource( 1 )]
 position = Vector2( 134.123, -108.921 )
