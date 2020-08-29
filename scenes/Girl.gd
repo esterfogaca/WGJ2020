@@ -7,6 +7,14 @@ const GRAVITY = 100
 const JUMP_HEIGHT = -1500
 
 var velocity = Vector2.ZERO
+var score = 0
+
+signal score_changed(value)
+
+func _on_Flower_picked_flower() -> void:
+	score = score + 1
+	$AudioFlower.play() 
+	emit_signal("score_changed", score)
 
 func _physics_process(delta: float) -> void:
 	velocity.y += GRAVITY
@@ -42,4 +50,4 @@ func _physics_process(delta: float) -> void:
 	velocity = move_and_slide(velocity, UP)
 	#velocity vai me retornar a minha própria velocidade e se eu colidir em algo volta a zerar.
 	
-	
+

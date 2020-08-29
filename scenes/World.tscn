@@ -1,24 +1,24 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://actors/Girl.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/Flower.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/tileset/Projeto_Woman_Game_jam_2020-1.ogg" type="AudioStream" id=2]
+[ext_resource path="res://scenes/Flower.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/UICounter.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/tileset/sample_alt.png" type="Texture" id=7]
 
-[sub_resource type="StreamTexture" id=5]
+[sub_resource type="StreamTexture" id=1]
 flags = 4
-load_path = "res://.import/volcano_pack_39.png-842f66f32c7826cd253e59b3b3226d18.stex"
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 3.9773, 0.492545 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 271.304, 80.069 )
+extents = Vector2( 3.9773, 0.492545 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 111.786, 727.114 )
+extents = Vector2( 271.304, 80.069 )
 
 [sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 111.786, 727.114 )
+
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 68.4803, 888.173 )
 
 [node name="World" type="Node2D"]
@@ -43,25 +43,25 @@ scale = Vector2( 0.611246, 0.949553 )
 [node name="volcano_pack_39" type="Sprite" parent="Stage/Sprite"]
 visible = false
 position = Vector2( 572.201, 1996.63 )
-texture = SubResource( 5 )
+texture = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stage"]
 position = Vector2( 630.371, 1720.32 )
 scale = Vector2( 220, 167.363 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Stage"]
 position = Vector2( 2087.23, 1707.43 )
 scale = Vector2( 0.611246, 0.949553 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Stage"]
 position = Vector2( 2284.64, 1275.41 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Stage"]
 position = Vector2( -55.6193, 1084.58 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="Sprite2" type="Sprite" parent="Stage"]
 scale = Vector2( 0.611246, 0.949553 )
@@ -69,7 +69,22 @@ scale = Vector2( 0.611246, 0.949553 )
 [node name="volcano_pack_39" type="Sprite" parent="Stage/Sprite2"]
 visible = false
 position = Vector2( 3600.14, 1980.87 )
-texture = SubResource( 5 )
+texture = SubResource( 1 )
+
+[node name="Flower" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1344.24, 1118.26 )
+
+[node name="Flower2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1851.18, 1307.6 )
+
+[node name="Flower3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2358.12, 1130.48 )
+
+[node name="Flower4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2761.23, 1124.37 )
+
+[node name="Flower5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3115.47, 1429.75 )
 
 [node name="Girl" parent="." instance=ExtResource( 1 )]
 position = Vector2( 134.123, -108.921 )
@@ -78,5 +93,15 @@ position = Vector2( 134.123, -108.921 )
 stream = ExtResource( 2 )
 autoplay = true
 
-[node name="Flower" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1377.85, 1236.59 )
+[node name="Counter" parent="." instance=ExtResource( 4 )]
+margin_left = 2622.39
+margin_top = 45.7445
+margin_right = 2741.39
+margin_bottom = 85.7445
+rect_scale = Vector2( 6.06988, 6.29398 )
+[connection signal="picked_flower" from="Flower" to="Girl" method="_on_Flower_picked_flower"]
+[connection signal="picked_flower" from="Flower2" to="Girl" method="_on_Flower_picked_flower"]
+[connection signal="picked_flower" from="Flower3" to="Girl" method="_on_Flower_picked_flower"]
+[connection signal="picked_flower" from="Flower4" to="Girl" method="_on_Flower_picked_flower"]
+[connection signal="picked_flower" from="Flower5" to="Girl" method="_on_Flower_picked_flower"]
+[connection signal="score_changed" from="Girl" to="Counter" method="_on_Girl_score_changed"]
