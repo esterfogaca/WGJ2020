@@ -72,7 +72,7 @@ position = Vector2( 3600.14, 1980.87 )
 texture = SubResource( 1 )
 
 [node name="Flower" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1344.24, 1118.26 )
+position = Vector2( 1344.24, 1106.04 )
 
 [node name="Flower2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1851.18, 1307.6 )
@@ -88,17 +88,18 @@ position = Vector2( 3115.47, 1429.75 )
 
 [node name="Girl" parent="." instance=ExtResource( 1 )]
 position = Vector2( 134.123, -108.921 )
+scale = Vector2( 2, 2 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
 autoplay = true
 
 [node name="Counter" parent="." instance=ExtResource( 4 )]
-margin_left = 2622.39
-margin_top = 45.7445
-margin_right = 2741.39
-margin_bottom = 85.7445
-rect_scale = Vector2( 6.06988, 6.29398 )
+margin_left = 2811.73
+margin_top = 76.283
+margin_right = 2930.73
+margin_bottom = 116.283
+rect_scale = Vector2( 4, 4 )
 [connection signal="picked_flower" from="Flower" to="Girl" method="_on_Flower_picked_flower"]
 [connection signal="picked_flower" from="Flower2" to="Girl" method="_on_Flower_picked_flower"]
 [connection signal="picked_flower" from="Flower3" to="Girl" method="_on_Flower_picked_flower"]
