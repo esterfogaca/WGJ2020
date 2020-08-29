@@ -16,6 +16,11 @@ func _on_Flower_picked_flower() -> void:
 	score = score + 1
 	$AudioFlower.play() 
 	emit_signal("score_changed", score)
+	if score == 5:
+		get_tree().change_scene("res://scenes/Final_image.tscn")
+		
+	
+		
 
 func _physics_process(delta: float) -> void:
 	velocity.y += GRAVITY

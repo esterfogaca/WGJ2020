@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/bear/Ursinho-Sprites.jpg" type="Texture" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Ursinho-Sprites" type="Sprite" parent="."]
+position = Vector2( 534.862, 298.904 )
+scale = Vector2( 0.136856, 0.134201 )
+texture = ExtResource( 1 )
