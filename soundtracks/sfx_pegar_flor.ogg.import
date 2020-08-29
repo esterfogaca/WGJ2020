@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sfx_pegar_flor.ogg-3f944d7d86ccb77021ebb6f5c1bf217d.oggstr"
+
+[deps]
+
+source_file="res://soundtracks/sfx_pegar_flor.ogg"
+dest_files=[ "res://.import/sfx_pegar_flor.ogg-3f944d7d86ccb77021ebb6f5c1bf217d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

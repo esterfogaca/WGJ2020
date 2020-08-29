@@ -5,6 +5,7 @@ const ACCELERATION = 50
 const MAX_SPEED = 500
 const GRAVITY = 100
 const JUMP_HEIGHT = -1500
+const RUN_SPEED = 1.8
 
 var velocity = Vector2.ZERO
 var score = 0
@@ -21,14 +22,21 @@ func _physics_process(delta: float) -> void:
 	var friction = false
 	
 	if Input.is_action_pressed("left"):
-		velocity.x = max(velocity.x-ACCELERATION, -MAX_SPEED)
+		if Input.is_action_pressed("run"):
+			velocity.x = max(velocity.x-ACCELERATION, -MAX_SPEED) * RUN_SPEED
+		else:
+			velocity.x = max(velocity.x-ACCELERATION, -MAX_SPEED)
 		$AnimatedSprite.play("walk")
 		$AnimatedSprite.flip_h = true
 		
 	elif Input.is_action_pressed("right"):
-		velocity.x = min(velocity.x+ACCELERATION, MAX_SPEED)
+		if Input.is_action_pressed("run"):
+			velocity.x = min(velocity.x+ACCELERATION, MAX_SPEED) * RUN_SPEED
+		else:
+			velocity.x = min(velocity.x+ACCELERATION, MAX_SPEED)
 		$AnimatedSprite.play("walk")
 		$AnimatedSprite.flip_h = false
+		
 	else: 
 		$AnimatedSprite.play("idle")
 		friction = true
