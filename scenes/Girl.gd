@@ -18,9 +18,6 @@ func _on_Flower_picked_flower() -> void:
 	if score == 5:
 		get_tree().change_scene("res://scenes/Final_image.tscn")
 		
-	
-		
-
 func _physics_process(delta: float) -> void:
 	velocity.y += GRAVITY
 	var friction = false
@@ -55,4 +52,5 @@ func _physics_process(delta: float) -> void:
 	velocity = move_and_slide(velocity, UP)
 	#velocity vai me retornar a minha própria velocidade e se eu colidir em algo volta a zerar.
 	
+			
 
