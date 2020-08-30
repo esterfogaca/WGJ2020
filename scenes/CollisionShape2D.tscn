@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+
+[node name="Sprite" type="Sprite"]
+scale = Vector2( 0.611246, 0.949553 )
+
+[node name="volcano_pack_39" type="Sprite" parent="."]
+visible = false
+position = Vector2( 572.201, 1996.63 )
+texture = SubResource( 1 )
