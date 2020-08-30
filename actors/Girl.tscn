@@ -36,18 +36,19 @@ extents = Vector2( 41.1919, 73.1779 )
 
 [node name="Girl" type="KinematicBody2D"]
 position = Vector2( -2.02055, -6.61913 )
+z_index = 1
 script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -4.91862, -78.5633 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 2
+frame = 1
 speed_scale = 2.0
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 50, -150 )
+position = Vector2( 50, -50 )
 current = true
 limit_left = 0
 drag_margin_h_enabled = true

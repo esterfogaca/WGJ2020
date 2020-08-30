@@ -4,7 +4,7 @@ const UP = Vector2(0, -1)
 const ACCELERATION = 50
 const MAX_SPEED = 500
 const GRAVITY = 100
-const JUMP_HEIGHT = -1500
+const JUMP_HEIGHT = -1650
 const RUN_SPEED = 1.8
 
 var velocity = Vector2.ZERO
