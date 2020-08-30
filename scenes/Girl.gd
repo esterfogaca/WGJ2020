@@ -42,7 +42,6 @@ func _physics_process(delta: float) -> void:
 		friction = true
 	
 	if is_on_floor():
-		$AnimatedSprite.play("idle")
 		if Input.is_action_just_pressed("up_jump"):
 			velocity.y = JUMP_HEIGHT
 			$AudioJump.play()
