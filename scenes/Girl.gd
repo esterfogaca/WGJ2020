@@ -16,7 +16,7 @@ func _on_Flower_picked_flower() -> void:
 	score = score + 1
 	$AudioFlower.play() 
 	emit_signal("score_changed", score)
-	if score == 5:
+	if score == 6:
 		get_tree().change_scene("res://scenes/Final_image.tscn")
 		
 func _physics_process(delta: float) -> void:
@@ -29,7 +29,9 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.x = max(velocity.x-ACCELERATION, -MAX_SPEED)
 		$AnimatedSprite.play("walk")
+		$Teddy.play("walk")
 		$AnimatedSprite.flip_h = true
+		$Teddy.flip_h = true
 		
 	elif Input.is_action_pressed("right"):
 		if Input.is_action_pressed("run"):
@@ -37,10 +39,13 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.x = min(velocity.x+ACCELERATION, MAX_SPEED)
 		$AnimatedSprite.play("walk")
+		$Teddy.play("walk")
 		$AnimatedSprite.flip_h = false
+		$Teddy.flip_h = false
 		
 	else: 
 		$AnimatedSprite.play("idle")
+		$Teddy.play("idle")
 		friction = true
 	
 	if is_on_floor():
@@ -52,6 +57,7 @@ func _physics_process(delta: float) -> void:
 	
 	else:
 		$AnimatedSprite.play("jump")
+		$Teddy.play("jump")
 		if friction == true:
 			velocity.x = lerp(velocity.x, 0, 0.05)
 						
