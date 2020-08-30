@@ -20,14 +20,14 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "jump",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 9 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "jump",
 "speed": 5.0
 } ]
 
@@ -43,13 +43,14 @@ script = ExtResource( 3 )
 position = Vector2( -4.91862, -78.5633 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 1
+frame = 3
 speed_scale = 2.0
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 50, -50 )
 current = true
+zoom = Vector2( 1.5, 1.5 )
 limit_left = 0
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
