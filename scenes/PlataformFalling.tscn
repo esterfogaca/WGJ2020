@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/PlataformFalling.gd" type="Script" id=1]
+[ext_resource path="res://assets/tileset/broken_square_pillow .png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 126.7, 25.5584 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 81.8019, 14.3333 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "plataform_shaking"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 468.189, 319.534 ), Vector2( 504.189, 319.534 ), Vector2( 458.189, 319.534 ), Vector2( 467.189, 297.534 ), Vector2( 467.189, 324.534 ) ]
+}
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+collision_layer = 2
+collision/safe_margin = 0.01
+motion/sync_to_physics = true
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 467.978, 320.59 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 469.189, 305.31 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="falling_timer" type="Timer" parent="."]
+
+[node name="respawn_timer" type="Timer" parent="."]
+
+[node name="sensor" type="Area2D" parent="."]
+position = Vector2( 469.19, 271.636 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sensor"]
+light_mask = 99
+position = Vector2( -6.73514, -11.2242 )
+shape = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/plataform_shaking = SubResource( 3 )
+[connection signal="body_entered" from="sensor" to="." method="_on_sensor_body_entered"]
+[connection signal="body_exited" from="sensor" to="." method="_on_sensor_body_exited"]
