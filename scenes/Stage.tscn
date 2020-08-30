@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/CollisionShape2D.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/tileset/sample_alt.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 271.304, 80.069 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 111.786, 727.114 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 68.4803, 888.173 )
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+
+[node name="Stage" type="StaticBody2D"]
+scale = Vector2( 1.5, 1 )
+
+[node name="YSort" type="YSort" parent="."]
+position = Vector2( -37.3755, -29.3665 )
+scale = Vector2( 0.666667, 1 )
+
+[node name="Sprite" type="Sprite" parent="YSort"]
+position = Vector2( 23.3354, -10.1992 )
+scale = Vector2( 2.71323, 2.71323 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="." instance=ExtResource( 1 )]
+scale = Vector2( 0.611246, 0.949553 )
+
+[node name="CollisionShape2D" type="Sprite" parent="." instance=ExtResource( 1 )]
+position = Vector2( 630.371, 1720.32 )
+scale = Vector2( 220, 167.363 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2( 2087.23, 1707.43 )
+scale = Vector2( 0.611246, 0.949553 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( 2308.76, 1247.1 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2( -55.6193, 1084.58 )
+shape = SubResource( 5 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+scale = Vector2( 0.611246, 0.949553 )
+
+[node name="volcano_pack_39" type="Sprite" parent="Sprite2"]
+visible = false
+position = Vector2( 3600.14, 1980.87 )
+texture = SubResource( 1 )
