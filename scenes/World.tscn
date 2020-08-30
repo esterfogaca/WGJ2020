@@ -94,15 +94,19 @@ scale = Vector2( 2, 2 )
 stream = ExtResource( 2 )
 autoplay = true
 
-[node name="Counter" parent="." instance=ExtResource( 4 )]
-margin_left = 2811.73
-margin_top = 76.283
-margin_right = 2930.73
-margin_bottom = 116.283
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+scale = Vector2( 0.2, 0.2 )
+transform = Transform2D( 0.2, 0, 0, 0.2, 0, 0 )
+
+[node name="Counter" parent="CanvasLayer" instance=ExtResource( 4 )]
+margin_left = 4576.03
+margin_top = 89.0308
+margin_right = 4695.03
+margin_bottom = 129.031
 rect_scale = Vector2( 4, 4 )
 [connection signal="picked_flower" from="Flower" to="Girl" method="_on_Flower_picked_flower"]
 [connection signal="picked_flower" from="Flower2" to="Girl" method="_on_Flower_picked_flower"]
 [connection signal="picked_flower" from="Flower3" to="Girl" method="_on_Flower_picked_flower"]
 [connection signal="picked_flower" from="Flower4" to="Girl" method="_on_Flower_picked_flower"]
 [connection signal="picked_flower" from="Flower5" to="Girl" method="_on_Flower_picked_flower"]
-[connection signal="score_changed" from="Girl" to="Counter" method="_on_Girl_score_changed"]
+[connection signal="score_changed" from="Girl" to="CanvasLayer/Counter" method="_on_Girl_score_changed"]
